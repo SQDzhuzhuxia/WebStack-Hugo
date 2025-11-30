@@ -1,128 +1,49 @@
 <div id="content" class="content-site customize-site">
+    <!-- 首页只显示常用推荐 -->
     {{ range .Site.Data.webstack }}
-        {{ if .list }}
-            {{ range .list }}
-	    <!--正文网址导航--》
-            <!-- {{ .term }} -->
-            <div class="d-flex flex-fill">
-                <h4 class="text-gray text-lg mb-4">
-                    <i class="site-tag iconfont icon-tag icon-lg mr-1" id="{{ md5 .term }}"></i>
-                    {{ .term }}
-                </h4>
-                <div class="flex-fill"></div>
-                <!--a class='btn-move text-xs' href='#'>more+</a-->
-            </div>
-            <!--获取内容列表-->
-            <div class="row">
-                {{ range .links }}
-                <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
-                    <div class="url-body default">
-			<!--去除 Tooltip
-                        <a href="{{ .url }}" target="_blank" data-id="" data-url="{{ .url }}" class="card no-c mb-4" title="{{ .title }}">
-			去除 Tooltip -->
-			{{ if .qrcode }}
-                            {{ if findRE "http.*?(.|\n)*?" .qrcode }}
-                    	        <a href="javascript:" target="" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true" 
-                                title="<img src='{{ .qrcode }}' width='128'>">
-                            {{ else }}
-                                <a href="javascript:" target="" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true"
-                                title="<img src='{{ $.Site.Params.logosPath }}/{{ .qrcode }}' width='128'>">
-                            {{ end }}
-                        {{ else }}
-                            <a href="{{ .url }}" target="_blank" data-id="" data-url="{{ .url }}"
-                            class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="{{ .description }}">
-			{{ end }}
-                            <div class="card-body">
-                                <div class="url-content d-flex align-items-center">
-                                    <div class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                        {{ if findRE "http.*?(.|\n)*?" .logo }}
-					    {{ if $.Site.Params.defaultLogo }}
-                                            <img class="lazy" src="{{ .logo }}" data-src="{{ .logo }}"
-                                                onerror="javascript:this.src='{{ $.Site.Params.defaultLogo }}'" alt="{{ .title }}">
-					    {{ else }}
-					    <img class="lazy" src="{{ .logo }}" data-src="{{ .logo }}"
-                                                onerror="javascript:this.src='{{ .logo }}'" alt="{{ .title }}">
-					    {{ end }}
-                                        {{ else }}
-					    {{ if $.Site.Params.defaultLogo }}
-					    <img class="lazy" src="{{ $.Site.Params.logosPath }}/{{ .logo }}" data-src="{{ $.Site.Params.logosPath }}/{{ .logo }}"
-                                                onerror="javascript:this.src='{{ $.Site.Params.defaultLogo }}'" alt="{{ .title }}">
-					    {{ else }}
-                                            <img class="lazy" src="{{ $.Site.Params.logosPath }}/{{ .logo }}" data-src="{{ $.Site.Params.logosPath }}/{{ .logo }}"
-                                                onerror="javascript:this.src='{{ $.Site.Params.logosPath }}/{{ .logo }}'" alt="{{ .title }}">
-					    {{ end }}
-                                        {{ end }}
-                                    </div>
-                                    <div class="url-info flex-fill">
-                                        <div class="text-sm overflowClip_1">
-                                            <strong>{{ .title }}</strong>
-                                        </div>
-                                        <p class="overflowClip_1 m-0 text-muted text-xs">{{ .description }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="{{ .url }}" class="togo text-center text-muted is-views" data-id="689"
-                            data-toggle="tooltip" data-placement="right" title="直达" rel="nofollow">
-                            <i class="iconfont icon-goto"></i>
-                        </a>
-                    </div>
-                </div>
-                {{ end }}
-            </div><!--end row-->
-            <br />
-            <!--END {{ .term }} -->
-            {{ end }}
-        {{ else }}
-	    <!--常用推荐-->
-            <!-- {{ .taxonomy }} -->
+        {{ if eq .taxonomy "常用推荐" }}
+            <!-- 常用推荐 -->
             <div class="d-flex flex-fill">
                 <h4 class="text-gray text-lg mb-4">
                     <i class="site-tag iconfont icon-tag icon-lg mr-1" id="{{ md5 .taxonomy }}"></i>
                     {{ .taxonomy }}
                 </h4>
-                <!--div class="flex-fill"></div>
-                <a class='btn-move text-xs' href='#'>more+</a-->
             </div>
-            <!--获取内容列表-->
             <div class="row">
                 {{ range .links }}
                 <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
                     <div class="url-body default">
-			<!--去除 Tooltip
-			<a href="{{ .url }}" target="_blank" data-id="" data-url="{{ .url }}" class="card no-c mb-4" title="{{ .title }}">
-			-->
-			{{ if .qrcode }}
+                        {{ if .qrcode }}
                             {{ if findRE "http.*?(.|\n)*?" .qrcode }}
-			        <a href="javascript:" target="" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true" 
+                            <a href="javascript:" target="" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true" 
                                 title="<img src='{{ .qrcode }}' width='128'>">
                             {{ else }}
-                                <a href="javascript:" target="" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true"
+                            <a href="javascript:" target="" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true"
                                 title="<img src='{{ $.Site.Params.logosPath }}/{{ .qrcode }}' width='128'>">
                             {{ end }}
                         {{ else }}
                             <a href="{{ .url }}" target="_blank" data-id="" data-url="{{ .url }}" 
                             class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="{{ .description }}">
-			{{ end }}
+                        {{ end }}
                             <div class="card-body">
                                 <div class="url-content d-flex align-items-center">
                                     <div class="url-img mr-2 d-flex align-items-center justify-content-center">
                                         {{ if findRE "http.*?(.|\n)*?" .logo }}
-					    {{ if $.Site.Params.defaultLogo }}
-					    <img class="lazy" src="{{ .logo }}" data-src="{{ .logo }}"
+                                            {{ if $.Site.Params.defaultLogo }}
+                                            <img class="lazy" src="{{ .logo }}" data-src="{{ .logo }}"
                                                 onerror="javascript:this.src='{{ $.Site.Params.defaultLogo }}'" alt="{{ .title }}">
-					    {{ else }}
+                                            {{ else }}
                                             <img class="lazy" src="{{ .logo }}" data-src="{{ .logo }}"
                                                 onerror="javascript:this.src='{{ .logo }}'" alt="{{ .title }}">
-					    {{ end }}
+                                            {{ end }}
                                         {{ else }}
-					    {{ if $.Site.Params.defaultLogo }}
+                                            {{ if $.Site.Params.defaultLogo }}
                                             <img class="lazy" src="{{ $.Site.Params.logosPath }}/{{ .logo }}" data-src="{{ $.Site.Params.logosPath }}/{{ .logo }}"
                                                 onerror="javascript:this.src='{{ $.Site.Params.defaultLogo }}'" alt="{{ .title }}">
-					    {{ else }}
+                                            {{ else }}
                                             <img class="lazy" src="{{ $.Site.Params.logosPath }}/{{ .logo }}" data-src="{{ $.Site.Params.logosPath }}/{{ .logo }}"
                                                 onerror="javascript:this.src='{{ $.Site.Params.logosPath }}/{{ .logo }}'" alt="{{ .title }}">
-					    {{ end }}
+                                            {{ end }}
                                         {{ end }}
                                     </div>
                                     <div class="url-info flex-fill">
@@ -143,9 +64,55 @@
                 {{ end }}
             </div>
             <br />
-            <!--END {{ .taxonomy }} -->
         {{ end }}
-    {{ end }}                        
+    {{ end }}
+
+    <!-- 分类导航卡片 -->
+    <div class="d-flex flex-fill">
+        <h4 class="text-gray text-lg mb-4">
+            <i class="site-tag iconfont icon-tag icon-lg mr-1"></i>
+            所有分类
+        </h4>
+    </div>
+    <div class="row">
+        {{ range .Site.Data.webstack }}
+            {{ if ne .taxonomy "常用推荐" }}
+                {{ $slug := .taxonomy | urlize }}
+                {{ if eq .taxonomy "人工智能" }}{{ $slug = "ai" }}{{ end }}
+                {{ if eq .taxonomy "区块链" }}{{ $slug = "blockchain" }}{{ end }}
+                {{ if eq .taxonomy "计算机科学" }}{{ $slug = "cs" }}{{ end }}
+                {{ if eq .taxonomy "游戏开发" }}{{ $slug = "gamedev" }}{{ end }}
+                {{ if eq .taxonomy "金融经济" }}{{ $slug = "finance" }}{{ end }}
+                {{ if eq .taxonomy "游戏" }}{{ $slug = "game" }}{{ end }}
+                {{ if eq .taxonomy "GTD" }}{{ $slug = "gtd" }}{{ end }}
+                {{ if eq .taxonomy "笔记软件" }}{{ $slug = "notes" }}{{ end }}
+                {{ if eq .taxonomy "其他" }}{{ $slug = "other" }}{{ end }}
+                {{ if eq .taxonomy "待整理" }}{{ $slug = "pending" }}{{ end }}
+                <div class="url-card col-6 col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
+                    <div class="url-body default">
+                        <a href="{{ absURL (printf "category/%s/" $slug) }}" class="card no-c mb-4">
+                            <div class="card-body">
+                                <div class="url-content d-flex align-items-center">
+                                    <div class="url-img mr-2 d-flex align-items-center justify-content-center">
+                                        <i class="{{ .icon }}" style="font-size: 24px; color: #666;"></i>
+                                    </div>
+                                    <div class="url-info flex-fill">
+                                        <div class="text-sm overflowClip_1">
+                                            <strong>{{ .taxonomy }}</strong>
+                                        </div>
+                                        <p class="overflowClip_1 m-0 text-muted text-xs">
+                                            {{ if .list }}{{ len .list }} 个子分类{{ else }}{{ len .links }} 个网站{{ end }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {{ end }}
+        {{ end }}
+    </div>
+    <br />                        
 
     <h4 class="text-gray text-lg mb-4">
         <i class="iconfont icon-book-mark-line icon-lg mr-2" id="friendlink"></i>友情链接

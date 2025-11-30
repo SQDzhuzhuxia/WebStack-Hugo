@@ -92,22 +92,34 @@
                         <div class="sidebar-menu-inner">
                             <ul>
                                 {{ range .Site.Data.webstack }}
+                                    {{ $slug := .taxonomy | urlize }}
+                                    {{ if eq .taxonomy "常用推荐" }}{{ $slug = "changyong" }}{{ end }}
+                                    {{ if eq .taxonomy "人工智能" }}{{ $slug = "ai" }}{{ end }}
+                                    {{ if eq .taxonomy "区块链" }}{{ $slug = "blockchain" }}{{ end }}
+                                    {{ if eq .taxonomy "计算机科学" }}{{ $slug = "cs" }}{{ end }}
+                                    {{ if eq .taxonomy "游戏开发" }}{{ $slug = "gamedev" }}{{ end }}
+                                    {{ if eq .taxonomy "金融经济" }}{{ $slug = "finance" }}{{ end }}
+                                    {{ if eq .taxonomy "游戏" }}{{ $slug = "game" }}{{ end }}
+                                    {{ if eq .taxonomy "GTD" }}{{ $slug = "gtd" }}{{ end }}
+                                    {{ if eq .taxonomy "笔记软件" }}{{ $slug = "notes" }}{{ end }}
+                                    {{ if eq .taxonomy "其他" }}{{ $slug = "other" }}{{ end }}
+                                    {{ if eq .taxonomy "待整理" }}{{ $slug = "pending" }}{{ end }}
                                     {{ if .list }}
                                     <li class="sidebar-item">
-                                        <a href="#{{ range first 1 .list }}{{ md5 .term }}{{ end }}" class="smooth change-href" data-change="#{{ range first 1 .list }}{{ md5 .term }}{{ end }}">    
+                                        <a href="{{ absURL (printf "category/%s/" $slug) }}">    
                                             <i class="{{ .icon }} icon-fw icon-lg mr-2"></i>
                                             <span>{{ .taxonomy }}</span>
                                             <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
                                         </a>
                                         <ul>
                                             {{ range .list }}
-                                            <li><a href="#{{ md5 .term }}" class="smooth"><span>{{ .term }}</span></a></li>
+                                            <li><a href="{{ absURL (printf "category/%s/#%s" $slug (md5 .term)) }}"><span>{{ .term }}</span></a></li>
                                             {{ end }}
                                         </ul>
                                     </li> 
                                     {{ else }}
                                     <li class="sidebar-item">
-                                        <a href="#{{ md5 .taxonomy }}" class="smooth">
+                                        <a href="{{ absURL (printf "category/%s/" $slug) }}">
                                             <i class="{{ .icon }} fa-lg icon-fw icon-lg mr-2"></i>
                                             <span>{{ .taxonomy }}</span>
                                         </a>
