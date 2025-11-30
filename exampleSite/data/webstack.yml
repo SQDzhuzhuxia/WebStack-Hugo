@@ -49,11 +49,11 @@
   icon: fas fa-robot fa-lg
   links:
     - title: ChatGPT
-      logo: ''
+      logo: chatgpt.png
       url: https://chatgpt.com/
       description: OpenAI 旗舰 AI 助手，全球最流行的对话式 AI。
     - title: Claude
-      logo: ''
+      logo: claude.png
       url: https://claude.ai/
       description: Anthropic 出品的 AI 助手，擅长长文本和代码。
     - title: DeepSeek
@@ -61,19 +61,19 @@
       url: https://www.deepseek.com/
       description: 深度求索，国产顶级开源大模型。
     - title: Gemini
-      logo: ''
+      logo: gemini.png
       url: https://gemini.google.com/
       description: Google 出品的多模态 AI 助手。
     - title: Grok (xAI)
-      logo: ''
+      logo: grok.png
       url: https://x.ai/
       description: 马斯克 xAI 公司出品的 AI 助手。
     - title: 通义千问
-      logo: ''
+      logo: qianwen.png
       url: https://www.qianwen.com/
       description: 阿里巴巴出品的大语言模型。
     - title: 豆包
-      logo: ''
+      logo: doubao.png
       url: https://www.doubao.com/
       description: 字节跳动旗下 AI 智能助手。
     - title: Chatbot Arena
@@ -93,11 +93,11 @@
       url: https://aistudio.google.com/
       description: Google AI 开发工具平台。
     - title: 硅基流动
-      logo: ''
+      logo: siliconflow.png
       url: https://cloud.siliconflow.cn/
       description: 国内领先的 AI 模型云服务平台。
     - title: Dify
-      logo: ''
+      logo: dify.png
       url: https://dify.ai/
       description: 开源的 LLM 应用开发平台。
     - title: Coze 扣子
@@ -109,19 +109,19 @@
       url: https://www.coze.com/
       description: Coze 国际版。
     - title: LangChain
-      logo: ''
+      logo: langchain.png
       url: https://www.langchain.com/
       description: 构建 LLM 应用的开发框架。
     - title: Langflow
-      logo: ''
+      logo: langflow.png
       url: https://www.langflow.org/
       description: 可视化 AI 工作流构建工具。
     - title: Ollama
-      logo: ''
+      logo: ollama.png
       url: https://ollama.com/
       description: 本地运行大模型的最佳工具。
     - title: Flowith
-      logo: ''
+      logo: flowith.png
       url: https://try.flowith.io/
       description: AI 创作工作空间。
     - title: Cursor
@@ -129,19 +129,19 @@
       url: https://cursor.com/
       description: AI 驱动的代码编辑器，编程效率神器。
     - title: Windsurf
-      logo: ''
+      logo: windsurf.png
       url: https://windsurf.com/
       description: Codeium 出品的 AI 代码编辑器。
     - title: Bolt
-      logo: ''
+      logo: bolt.png
       url: https://bolt.new/
       description: AI 快速构建网站和应用。
     - title: v0
-      logo: ''
+      logo: v0.png
       url: https://v0.dev/
       description: Vercel 出品的 AI UI 生成工具。
     - title: Zed
-      logo: ''
+      logo: zed.png
       url: https://zed.dev/
       description: 高性能代码编辑器，内置 AI 功能。
     - title: Lovart
@@ -149,23 +149,23 @@
       url: https://www.lovart.ai/
       description: AI 艺术创作平台。
     - title: Recraft
-      logo: ''
+      logo: recraft.png
       url: https://www.recraft.ai/
       description: AI 设计工具，适合设计师和创意工作者。
     - title: Genspark
-      logo: ''
+      logo: genspark.png
       url: https://www.genspark.ai/
       description: 一站式 AI 工作空间。
     - title: AI 工具集
-      logo: ''
+      logo: aibot.png
       url: https://ai-bot.cn/
       description: 1000+ AI 工具集合，国内外 AI 工具导航大全。
     - title: 三花 AI 导航
-      logo: ''
+      logo: sanhua.png
       url: https://sanhua.himrr.com/nav
       description: 1000+ 国内外 AI 工具导航。
     - title: 通往 AGI 之路
-      logo: ''
+      logo: feishu.png
       url: https://waytoagi.feishu.cn/wiki/QPe5w5g7UisbEkkow8XcDmOpn8e
       description: 飞书上的 AI 学习资源汇总。
 
@@ -182,7 +182,7 @@
       url: https://dune.com/
       description: 区块链数据分析平台，可视化链上数据。
     - title: Nansen
-      logo: ''
+      logo: nansen.png
       url: https://www.nansen.ai/
       description: 专业的链上数据分析和钱包追踪平台。
     - title: Etherscan
@@ -194,11 +194,11 @@
       url: https://dexscreener.com/
       description: DEX 交易对实时行情追踪。
     - title: GMGN
-      logo: ''
+      logo: gmgn.png
       url: https://gmgn.ai/
       description: Solana 链上交易数据分析。
     - title: OpenSea
-      logo: ''
+      logo: opensea.png
       url: https://opensea.io/
       description: 全球最大的 NFT 交易市场。
     - title: Blur
@@ -214,7 +214,7 @@
       url: https://www.panewslab.com/
       description: 区块链深度资讯和研究报告。
     - title: BlockBeats
-      logo: ''
+      logo: blockbeats.png
       url: https://www.theblockbeats.info/
       description: 律动，区块链快讯和深度内容。
     - title: ChainFeeds
@@ -222,7 +222,7 @@
       url: https://www.chainfeeds.xyz/
       description: 精选区块链内容聚合。
     - title: CoinDesk
-      logo: ''
+      logo: coindesk.png
       url: https://www.coindesk.com/
       description: 全球顶级加密货币新闻媒体。
     - title: Crypto Substack
@@ -235,7 +235,7 @@
   icon: fas fa-chart-line fa-lg
   links:
     - title: TradingView
-      logo: ''
+      logo: tradingview.png
       url: https://cn.tradingview.com/
       description: 全球领先的图表分析和社交交易平台。
 
@@ -244,7 +244,7 @@
   icon: fas fa-tasks fa-lg
   links:
     - title: Google Tasks
-      logo: ''
+      logo: googletasks.png
       url: https://tasks.google.com/
       description: Google 出品的简洁任务管理工具。
     - title: Notion
