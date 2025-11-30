@@ -29,7 +29,7 @@
             {{ if eq .taxonomy "待整理" }}{{ $slug = "pending" }}{{ end }}
             <div class="url-card col-6 col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
                 <div class="url-body default">
-                    <a href="{{ absURL (printf "category/%s/" $slug) }}" class="card no-c mb-4">
+                    <a href="{{ relURL (printf "category/%s/" $slug) }}" class="card no-c mb-4">
                         <div class="card-body">
                             <div class="url-content d-flex align-items-center">
                                 <div class="url-img mr-2 d-flex align-items-center justify-content-center">

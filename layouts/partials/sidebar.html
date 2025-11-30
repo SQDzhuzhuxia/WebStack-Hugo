@@ -106,20 +106,20 @@
                                     {{ if eq .taxonomy "待整理" }}{{ $slug = "pending" }}{{ end }}
                                     {{ if .list }}
                                     <li class="sidebar-item">
-                                        <a href="{{ absURL (printf "category/%s/" $slug) }}">    
+                                        <a href="{{ relURL (printf "category/%s/" $slug) }}">    
                                             <i class="{{ .icon }} icon-fw icon-lg mr-2"></i>
                                             <span>{{ .taxonomy }}</span>
                                             <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
                                         </a>
                                         <ul>
                                             {{ range .list }}
-                                            <li><a href="{{ absURL (printf "category/%s/#%s" $slug (md5 .term)) }}"><span>{{ .term }}</span></a></li>
+                                            <li><a href="{{ relURL (printf "category/%s/" $slug) }}#{{ md5 .term }}"><span>{{ .term }}</span></a></li>
                                             {{ end }}
                                         </ul>
                                     </li> 
                                     {{ else }}
                                     <li class="sidebar-item">
-                                        <a href="{{ absURL (printf "category/%s/" $slug) }}">
+                                        <a href="{{ relURL (printf "category/%s/" $slug) }}">
                                             <i class="{{ .icon }} fa-lg icon-fw icon-lg mr-2"></i>
                                             <span>{{ .taxonomy }}</span>
                                         </a>
